@@ -105,3 +105,17 @@ From a business perspective, these forecasts can support:
 - Data-driven decision-making for pricing and surge strategies
 
 ---
+
+## Production Workflow & Scalability
+
+In a real production environment, this forecasting pipeline would run on a scheduled basis (daily or hourly).
+
+A typical workflow would include:
+- New trip data ingested daily from operational systems
+- Feature generation and model inference executed automatically
+- Forecast outputs written to AWS DynamoDB
+- Business dashboards or internal services querying DynamoDB for insights
+
+This design allows the system to scale easily as new dispatching bases or longer time periods are added, without requiring schema changes or manual intervention.
+
+---
