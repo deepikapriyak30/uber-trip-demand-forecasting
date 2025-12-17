@@ -1,0 +1,15 @@
+feature,mean_abs_shap
+first_response_minutes,0.569158432046566
+avg_resolution_time,0.39574524267106437
+resolution_minutes,0.2532538802660547
+avg_first_response,0.223883076147311
+customer_age,0.1654953683968033
+product_purchased_label,0.14815970910132736
+desc_length,0.1442183911398284
+ticket_type_label,0.08784027646215231
+ticket_priority_label,0.0777985565461706
+ticket_channel_label,0.059201885968021575
+combined_length,0.043940086540044186
+age_group_label,0.03448597571596296
+total_tickets,0.0010014772889736206
+subject_length,0.0
