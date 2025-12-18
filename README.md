@@ -103,6 +103,7 @@ The project follows a structured, real-world analytics workflow:
 <img src="https://github.com/deepikapriyak30/uber-trip-demand-forecasting/blob/main/image/Actual_Predicted_Trips_Time_Series.png?raw=true" width="800" height="650">
 </p>
 
+The model predictions closely follow actual daily trip demand, capturing both seasonal peaks and short-term fluctuations with high accuracy.
 ---
 
 ## Business Recommendations
