@@ -98,6 +98,11 @@ The project follows a structured, real-world analytics workflow:
 - Trips per vehicle remain stable, indicating efficient fleet utilization.
 - Error spikes occur on a few isolated days, suggesting short-term demand anomalies rather than model issues.
 
+## 📊 Actual vs Predicted Trips (Time Series)
+<p align="centre">
+<img src="https://github.com/deepikapriyak30/IBM-HR-Analytics-Employee-Attrition-Performance/blob/main/image/Attrition%20Distribution.png?raw=true" width="350">
+</p>
+
 ---
 
 ## Business Recommendations
