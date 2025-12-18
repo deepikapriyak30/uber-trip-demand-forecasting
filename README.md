@@ -104,6 +104,7 @@ The project follows a structured, real-world analytics workflow:
 </p>
 
 The model predictions closely follow actual daily trip demand, capturing both seasonal peaks and short-term fluctuations with high accuracy.
+
 ---
 
 ## Business Recommendations
