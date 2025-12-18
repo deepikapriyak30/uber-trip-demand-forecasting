@@ -93,7 +93,7 @@ The project follows a structured, real-world analytics workflow:
 ## Key Insights
 
 - Predicted trips closely follow actual demand trends over time.
-- The model achieves **~99% forecast accuracy** with low average daily error.
+- MAPE-based forecast accuracy (**~99%**) or Low error (MAE **≈108 trips**).
 - Weekday demand is significantly higher than weekend demand.
 - Trips per vehicle remain stable, indicating efficient fleet utilization.
 - Error spikes occur on a few isolated days, suggesting short-term demand anomalies rather than model issues.
@@ -129,6 +129,6 @@ The project follows a structured, real-world analytics workflow:
 
 ## Dataset Source
 
-This project uses a **public Uber trip dataset** for learning and demonstration purposes only.
+This project uses a **Public Uber FOIL trip dataset (Jan–Feb 2015)**, used for learning purposes and demonstration purposes only.
 
 _I do not own the dataset. Full credit goes to the original data providers._
