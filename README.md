@@ -5,117 +5,150 @@ Forecasting Uber daily trip demand and analyzing base-level performance using Py
 
 ## Uber Trip Demand Forecasting using Machine Learning & AWS
 
-This project focuses on forecasting daily Uber trip demand using historical trip data and machine learning.  
-The goal is to help operations and pricing teams anticipate demand patterns and make data-driven decisions.
+**Author:** Deepika Priya K
 
-The project is built as an end-to-end analytics pipeline:
-- Data preprocessing and feature engineering
-- Machine learning model for demand forecasting
-- Cloud-based storage using AWS DynamoDB
-- Model evaluation using real vs predicted trip analysis
-- Business-focused insights through visualizations
+## Executive Summary
 
-The solution demonstrates how machine learning outputs can be operationalized and consumed in a real-world cloud environment.
+This project builds an end-to-end **Uber trip demand forecasting system** using historical trip data.
+The solution combines **data analytics, machine learning, cloud storage (AWS DynamoDB), and interactive dashboards** to predict daily demand, evaluate forecast accuracy, and support operational decision-making.
+
+The final output includes a **production-ready forecasting pipeline** and a **Tableau operational performance dashboard**.
 
 ---
 
 ## Business Problem & Objective
 
-Uber operates across multiple dispatching bases, each experiencing varying daily demand.  
-Accurately forecasting trip demand at the base level is critical for:
+Uber operates across multiple dispatching bases where** trip demand varies daily** due to time, weekday/weekend patterns, and operational constraints.
 
-- Efficient driver allocation
-- Reducing rider wait times
-- Avoiding under- or over-supply of vehicles
-- Supporting pricing and surge strategy decisions
+Key business challenges:
 
-The objective of this project is to:
-- Forecast daily trip demand for each Uber dispatching base
-- Compare predicted demand with actual trips
-- Evaluate forecast accuracy using business-friendly metrics
-- Store and analyze predictions in a cloud-based system for real-world usability
+- Predict daily trip demand accurately
 
----
+- Avoid under-supply or over-supply of vehicles
 
-## Data & Feature Engineering
+- Improve fleet utilization efficiency
 
-The analysis uses historical Uber trip data aggregated at the daily level for each dispatching base.  
-Each record represents the operational activity of a base on a given date.
+- Support pricing and operational planning
 
-Key features engineered for forecasting include:
-- Calendar features such as day of week
-- Lag features to capture previous-day and previous-week demand
-- Rolling averages to smooth short-term fluctuations
-- Operational ratios such as trips per active vehicle
+**Objective:**
 
-These features help the model learn both short-term patterns and recurring weekly trends in trip demand.
+Forecast daily trip demand per dispatching base and compare predictions with actual demand to assess model performance.
 
 ---
 
-## Machine Learning Approach & Evaluation
+## Methodology
 
-A supervised machine learning model was trained to predict daily trip demand using engineered time-based and operational features.  
-The dataset was split using a time-aware approach to preserve the chronological order of events.
+The project follows a structured, real-world analytics workflow:
 
-Model performance was evaluated by comparing predicted trips against actual trips.  
-Evaluation focused on:
-- Mean Absolute Error (MAE)
-- Mean Absolute Percentage Error (MAPE)
-- Visual comparison of actual vs predicted demand trends
+**1. Data Understanding & Cleaning**
 
-The model demonstrated strong alignment with real demand patterns, accurately capturing both peak and low-demand periods.
+- Cleaned raw trip data
 
----
+- Created date-based features (day, week, weekend)
 
-## AWS & NoSQL Architecture
+**2. Feature Engineering**
 
-To simulate a real-world production workflow, model outputs were stored and analyzed using AWS DynamoDB, a fully managed NoSQL database.
+- Lag features (Trips Lag 1, 7, 14)
 
-The architecture follows this flow:
-- Machine learning model generates daily trip demand forecasts
-- Forecasted and actual trip values are written to DynamoDB
-- Data is queried using base-level and date-range keys
-- Retrieved results are used for performance analysis and visualization
+- Rolling statistics (7-day and 14-day mean & standard deviation)
 
-DynamoDB was chosen because:
-- It supports fast, low-latency queries for time-series data
-- It scales automatically without schema management
-- It is well-suited for operational forecasting use cases
+- Operational metrics like trips per vehicle
 
-A composite key design was used:
-- Partition Key: dispatching_base_number
-- Sort Key: trip_date
+**3. Machine Learning Modeling**
 
-This allows efficient querying of daily demand trends for each Uber dispatching base.
+- Trained regression models for daily trip forecasting
 
----
+- Evaluated performance using MAE and accuracy metrics
 
-## Key Insights & Business Impact
+- Selected the best-performing model
 
-Key insights from the forecasting results include:
-- Predicted trip demand closely follows actual daily demand across dispatching bases
-- The model successfully captures sharp drops and spikes in demand
-- Forecast accuracy remains high even during peak demand periods
-- Minor deviations occur mainly on extreme low-demand days
+**4. Cloud Integration (AWS)**
 
-From a business perspective, these forecasts can support:
-- Better daily driver allocation and scheduling
-- Improved demand planning during peak and off-peak periods
-- Reduced operational inefficiencies caused by over- or under-supply
-- Data-driven decision-making for pricing and surge strategies
+- Stored actual and predicted results in **AWS DynamoDB**
+
+- Enabled fast querying using partition & sort keys
+
+**5. Visualization & Reporting**
+
+- Built a Tableau dashboard for business users
+
+- Compared actual vs predicted demand and errors
 
 ---
 
-## Production Workflow & Scalability
+## Skills & Tools Used
 
-In a real production environment, this forecasting pipeline would run on a scheduled basis (daily or hourly).
+**Programming & Analytics**
 
-A typical workflow would include:
-- New trip data ingested daily from operational systems
-- Feature generation and model inference executed automatically
-- Forecast outputs written to AWS DynamoDB
-- Business dashboards or internal services querying DynamoDB for insights
+- Python (Pandas, NumPy, Scikit-learn)
 
-This design allows the system to scale easily as new dispatching bases or longer time periods are added, without requiring schema changes or manual intervention.
+- SQL (exploratory and validation queries)
+
+**Machine Learning**
+
+- Time-series feature engineering
+
+- Regression modeling
+
+- Model evaluation (MAE, accuracy)
+
+**Cloud & Data Engineering**
+
+- AWS DynamoDB (NoSQL)
+
+- Boto3 for cloud interaction
+
+- Cloud-based storage of predictions
+
+**Visualization**
+
+- Tableau (KPIs, time series, error analysis dashboards)
 
 ---
+
+## Key Insights
+
+- Predicted trips closely follow actual demand trends over time.
+
+- The model achieves **~99% forecast accuracy** with low average daily error.
+
+- Weekday demand is significantly higher than weekend demand.
+
+- Trips per vehicle remain stable, indicating efficient fleet utilization.
+
+- Error spikes occur on a few isolated days, suggesting short-term demand anomalies rather than model issues.
+
+---
+
+## Business Recommendations
+
+- Use forecasts to **optimize vehicle allocation** by dispatching base.
+
+- Increase fleet availability during high weekday demand.
+
+- Monitor days with high forecast error for special events or anomalies.
+
+- Integrate forecasts into pricing and surge planning strategies.
+
+- Use trips-per-vehicle metrics to improve operational efficiency.
+
+---
+
+## Next Steps
+
+- Automate the pipeline with scheduled daily model runs
+
+- Integrate real-time data ingestion
+
+- Deploy dashboards for operations teams
+
+- Add alerting for high forecast error days
+
+- Extend forecasting to hourly or base-level granularity
+
+---
+
+## Dataset Source
+
+This project uses a **public Uber trip dataset** for learning and demonstration purposes only.
+_I do not own the dataset. Full credit goes to the original data providers._
