@@ -100,7 +100,7 @@ The project follows a structured, real-world analytics workflow:
 
 ## 📊 Actual vs Predicted Trips (Time Series)
 <p align="centre">
-<img src="https://github.com/deepikapriyak30/IBM-HR-Analytics-Employee-Attrition-Performance/blob/main/image/Attrition%20Distribution.png?raw=true" width="350">
+<img src="https://github.com/deepikapriyak30/uber-trip-demand-forecasting/blob/main/image/Actual_Predicted_Trips_Time_Series.png?raw=true" width="350">
 </p>
 
 ---
