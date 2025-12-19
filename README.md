@@ -55,7 +55,7 @@ The project follows a structured, real-world analytics workflow:
 
 **4. Cloud Integration (AWS)**
 
-- Stored actual and predicted results in **AWS DynamoDB**
+- Used DynamoDB for storing aggregated daily forecasts for fast retrieval in dashboards.
 - Enabled fast querying using partition & sort keys
 
 **5. Visualization & Reporting**
@@ -93,7 +93,7 @@ The project follows a structured, real-world analytics workflow:
 ## Key Insights
 
 - Predicted trips closely follow actual demand trends over time.
-- MAPE-based forecast accuracy (**~99%**) or Low error (MAE **≈108 trips**).
+- High forecast accuracy inferred from low MAPE.
 - Weekday demand is significantly higher than weekend demand.
 - Trips per vehicle remain stable, indicating efficient fleet utilization.
 - Error spikes occur on a few isolated days, suggesting short-term demand anomalies rather than model issues.
