@@ -18,7 +18,7 @@ The final output includes a **production-ready forecasting pipeline** and a **Ta
 
 ## Business Problem & Objective
 
-Uber operates across multiple dispatching bases where** trip demand varies daily** due to time, weekday/weekend patterns, and operational constraints.
+Uber operates across multiple dispatching bases where **trip demand varies daily** due to time, weekday/weekend patterns, and operational constraints.
 
 Key business challenges:
 
