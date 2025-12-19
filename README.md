@@ -76,7 +76,7 @@ The project follows a structured, real-world analytics workflow:
 
 - Time-series feature engineering
 - Regression modeling
-- Model evaluation (MAE, accuracy)
+- Model evaluation (MAE, MAPE)
 
 **Cloud & Data Engineering**
 
